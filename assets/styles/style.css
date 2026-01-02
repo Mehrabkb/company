@@ -1,3 +1,109 @@
-.slider .carousel-item img{
-	height: 90vh;	
+.slider .carousel-item img {
+	height: 90vh;
+}
+
+/* فاصله دادن vr از دکمه سرچ و مرتب‌سازی داخل هدر */
+.header-vr{
+  margin-right: .75rem;   /* فاصله از سمت راست (در RTL یعنی از سمت دکمه سرچ) */
+  margin-left: .75rem;    /* فاصله از سمت چپ */
+  height: 28px;           /* ارتفاع خط عمودی */
+  align-self: center;     /* وسط‌چین عمودی داخل ردیف */
+  opacity: .6;            /* کمی ملایم‌تر */
+}
+/* ===== Header: Login/Register pill ===== */
+.auth-link{
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  padding: .55rem .85rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,.45);
+  background: blue;
+  color: white;                 /* چون روی اسلایدر است */
+  text-decoration: none;
+  font-weight: 600;
+  
+  transition: .2s ease;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 8px 24px rgba(0,0,0,.12);
+}
+
+.auth-link:hover{
+  background: rgba(255,255,255,.22);
+  transform: translateY(-1px);
+  color: blue;
+  background: white;
+  border: 1px solid;
+}
+
+
+
+/* ===== VR spacing & alignment in navbar ===== */
+.header-vr{
+  margin: 0 12px;
+  height: 28px;
+  align-self: center;
+  opacity: .45;
+}
+
+/* ===== Navbar layout responsive tweaks ===== */
+.navbar .navbar-collapse{
+  align-items: center;
+}
+
+/* گروه سمت راست (دکمه‌ها + vr + ورود) در دسکتاپ */
+@media (min-width: 992px){
+  /* در دسکتاپ، محتویات collapse را دو طرفه کن */
+  .navbar .navbar-collapse{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  /* منو در سمت راست (RTL) */
+  .navbar-nav{
+    gap: .35rem;
+  }
+}
+
+/* ===== Mobile: stack nicely when collapsed ===== */
+@media (max-width: 991.98px){
+  .navbar .navbar-collapse{
+    margin-top: 12px;
+    padding: 12px;
+    border-radius: 12px;
+    background: rgba(0,0,0,.35); /* پشت منو وقتی باز می‌شود */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
+
+  .navbar-nav{
+    text-align: right;
+    gap: .25rem;
+  }
+
+  /* دکمه‌های تلگرام/واتساپ در موبایل تمام عرض شوند */
+  .navbar form.d-flex{
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .navbar form.d-flex .btn{
+    flex: 1;
+  }
+
+  /* VR در موبایل افقی شود (به‌جای عمودی) */
+  .header-vr{
+    width: 100%;
+    height: 1px;
+    margin: 12px 0;
+    opacity: .35;
+  }
+
+  /* لینک ورود وسط/راست و تمام عرض */
+  .auth-link{
+    width: 100%;
+    justify-content: center;
+  }
 }
