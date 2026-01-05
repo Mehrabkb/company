@@ -8,12 +8,16 @@
 	<link rel="stylesheet" type="text/css" href="assets/plugins/bootstrap/css/bootstrap.rtl.min.css">
 	<link rel="stylesheet" type="text/css" href="assets/styles/default.css">
 	<link rel="stylesheet" type="text/css" href="assets/styles/style.css">
+
+	<link rel="stylesheet" href="assets/fontawesome-free-7.1.0-web/fontawesome-free-7.1.0-web/css/all.min.css">
+
 	<title>تهران بایت</title>
 </head>
 
 <body>
-	<nav class="navbar navbar-expand-lg bg-transparent">
-		<div class="container me-auto">
+	<header>
+		<nav class="navbar navbar-expand-lg bg-transparent">
+		<div class="container-fluid me-auto">
 			<a class="navbar-brand d-flex " href="#">
 				<img src="assets/images/logo/Untitled-1.png" alt="Bootstrap" width="200px" height="50%">
 			</a>
@@ -48,20 +52,32 @@
 
 				</ul>
 
-				<form class="d-flex gap-1">
-					<button type="button" class="btn btn-outline-primary">تلگرام</button>
-					<button class="btn btn-outline-success  d-flex" type="submit">واتساپ</button>
+				<form class=" social d-flex gap-1">
+					<div class="social-buttons">
+					<a href="#" class="social-btn telegram js-social">
+						<i class="fab fa-telegram-plane"></i>
+						<span>تلگرام</span>
+					</a>
+
+					<a href="#" class="social-btn whatsapp js-social">
+						<i class="fab fa-whatsapp " ></i>
+						<span>واتساپ</span>
+					</a>
+				</div>
 				</form>
 				<hr class="vr header-vr">
-				<a href="" class="d-flex auth-link">
-					<img src="" alt="">
-					ورود|ثبت نام
+				<a class="phone" href="tel:+989369849997">
+					<i class="fa fa-phone" aria-hidden="true"></i>
+					09369849997
 				</a>
+				
+
 
 
 			</div>
 		</div>
 	</nav>
+	</header>
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col-12 slider">
@@ -247,6 +263,7 @@
 	<script src="assets/plugins/jquery/jquery.min.js"></script>
 	<script src="assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 	<script src="assets/scripts/script.js"></script>
+	<script src="assets/fontawesome-free-7.1.0-web/fontawesome-free-7.1.0-web/js/all.min.js"></script>
 </body>
 
 </html>

@@ -1,109 +1,226 @@
-.slider .carousel-item img {
-	height: 90vh;
-}
-
-/* فاصله دادن vr از دکمه سرچ و مرتب‌سازی داخل هدر */
-.header-vr{
-  margin-right: .75rem;   /* فاصله از سمت راست (در RTL یعنی از سمت دکمه سرچ) */
-  margin-left: .75rem;    /* فاصله از سمت چپ */
-  height: 28px;           /* ارتفاع خط عمودی */
-  align-self: center;     /* وسط‌چین عمودی داخل ردیف */
-  opacity: .6;            /* کمی ملایم‌تر */
-}
-/* ===== Header: Login/Register pill ===== */
-.auth-link{
+@charset "UTF-8";
+/* =======================
+   Variables
+======================= */
+/* =======================
+   Header Phone Button
+======================= */
+.phone {
   display: inline-flex;
   align-items: center;
-  gap: .5rem;
-  padding: .55rem .85rem;
+  gap: 0.5rem;
+  padding: 0.55rem 0.85rem;
   border-radius: 999px;
-  border: 1px solid rgba(255,255,255,.45);
-  background: blue;
-  color: white;                 /* چون روی اسلایدر است */
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  background: #277d37;
+  color: #fff;
   text-decoration: none;
   font-weight: 600;
-  
-  transition: .2s ease;
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  box-shadow: 0 8px 24px rgba(0,0,0,.12);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
 }
-
-.auth-link:hover{
-  background: rgba(255,255,255,.22);
+.phone:hover {
+  background: #fff;
+  color: #277d37;
   transform: translateY(-1px);
-  color: blue;
-  background: white;
-  border: 1px solid;
+  border-color: #277d37;
 }
 
-
-
-/* ===== VR spacing & alignment in navbar ===== */
-.header-vr{
+/* =======================
+   Header VR
+======================= */
+.header-vr {
   margin: 0 12px;
   height: 28px;
   align-self: center;
-  opacity: .45;
+  opacity: 0.45;
 }
 
-/* ===== Navbar layout responsive tweaks ===== */
-.navbar .navbar-collapse{
+/* =======================
+   Navbar
+======================= */
+.navbar .navbar-collapse {
   align-items: center;
 }
-
-/* گروه سمت راست (دکمه‌ها + vr + ورود) در دسکتاپ */
-@media (min-width: 992px){
-  /* در دسکتاپ، محتویات collapse را دو طرفه کن */
-  .navbar .navbar-collapse{
+.navbar .navbar-nav {
+  gap: 0.35rem;
+}
+@media (min-width: 992px) {
+  .navbar .navbar-collapse {
     display: flex;
     justify-content: space-between;
     width: 100%;
   }
-
-  /* منو در سمت راست (RTL) */
-  .navbar-nav{
-    gap: .35rem;
-  }
 }
-
-/* ===== Mobile: stack nicely when collapsed ===== */
-@media (max-width: 991.98px){
-  .navbar .navbar-collapse{
+@media (max-width: 991.98px) {
+  .navbar .navbar-collapse {
     margin-top: 12px;
     padding: 12px;
     border-radius: 12px;
-    background: rgba(0,0,0,.35); /* پشت منو وقتی باز می‌شود */
+    background: rgba(0, 0, 0, 0.35);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
   }
-
-  .navbar-nav{
+  .navbar .navbar-nav {
     text-align: right;
-    gap: .25rem;
+    gap: 0.25rem;
   }
-
-  /* دکمه‌های تلگرام/واتساپ در موبایل تمام عرض شوند */
-  .navbar form.d-flex{
+  .navbar form.d-flex {
     width: 100%;
     margin-top: 10px;
   }
-
-  .navbar form.d-flex .btn{
+  .navbar form.d-flex .btn {
     flex: 1;
   }
-
-  /* VR در موبایل افقی شود (به‌جای عمودی) */
-  .header-vr{
+  .navbar .header-vr {
     width: 100%;
     height: 1px;
     margin: 12px 0;
-    opacity: .35;
+    opacity: 0.35;
   }
-
-  /* لینک ورود وسط/راست و تمام عرض */
-  .auth-link{
+  .navbar .auth-link {
     width: 100%;
     justify-content: center;
   }
 }
+
+/* =======================
+   Social Buttons
+======================= */
+.social .social-buttons {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+.social .social-btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  overflow: hidden;
+  text-decoration: none;
+  color: #fff;
+  transition: width 0.35s ease, border-radius 0.35s ease;
+}
+.social .social-btn i {
+  position: absolute;
+  top: 50%;
+  right: 50%;
+  transform: translate(50%, -50%);
+  font-size: 40px;
+  z-index: 2;
+}
+.social .social-btn span {
+  position: absolute;
+  top: 50%;
+  right: 12px;
+  transform: translateY(-50%);
+  opacity: 0;
+  white-space: nowrap;
+  transition: opacity 0.25s ease;
+  z-index: 1;
+  font-size: 14px;
+}
+.social .social-btn.is-open {
+  width: 140px;
+  border-radius: 28px;
+}
+.social .social-btn.is-open span {
+  opacity: 1;
+  right: 30px;
+}
+.social .social-btn.telegram {
+  background-color: #0088cc;
+}
+.social .social-btn.whatsapp {
+  background-color: #25d366;
+}
+
+/* =======================
+   Slider
+======================= */
+.slider {
+  /* متن وسط تصویر */
+  /* دکمه‌های قبلی / بعدی */
+  /* جای دکمه‌ها کمی بهتر */
+}
+.slider .carousel-item {
+  position: relative;
+}
+.slider .carousel-item img {
+  height: 90vh;
+  -o-object-fit: cover;
+     object-fit: cover;
+  filter: brightness(0.7);
+}
+.slider .carousel-caption {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  right: auto;
+  bottom: auto;
+  display: flex !important;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: min(900px, 92%);
+  padding: 22px 26px;
+  border-radius: 18px;
+  background: rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.35);
+}
+.slider .carousel-caption h2 {
+  margin: 0 0 10px 0;
+  font-weight: 900;
+  line-height: 3;
+  letter-spacing: -0.5px;
+  font-size: clamp(34px, 5vw, 72px) !important;
+  text-shadow: 0 10px 28px rgba(0, 0, 0, 0.1);
+}
+.slider .carousel-caption p {
+  margin: 0;
+  font-size: clamp(14px, 1.4vw, 20px) !important;
+  opacity: 0.95;
+}
+.slider .carousel-control-prev,
+.slider .carousel-control-next {
+  width: 64px;
+  opacity: 1;
+}
+.slider .carousel-control-prev .carousel-control-prev-icon,
+.slider .carousel-control-prev .carousel-control-next-icon,
+.slider .carousel-control-next .carousel-control-prev-icon,
+.slider .carousel-control-next .carousel-control-next-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: transparent;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25);
+  transition: transform 0.25s ease, background-color 0.25s ease, border-color 0.25s ease;
+}
+.slider .carousel-control-prev:hover .carousel-control-prev-icon,
+.slider .carousel-control-prev:hover .carousel-control-next-icon,
+.slider .carousel-control-next:hover .carousel-control-prev-icon,
+.slider .carousel-control-next:hover .carousel-control-next-icon {
+  transform: translateY(-1px) scale(1.06);
+  background-color: rgba(255, 255, 255, 0.28);
+  border-color: rgba(255, 255, 255, 0.55);
+}
+.slider .carousel-control-prev {
+  justify-content: flex-start;
+  padding-left: 18px;
+}
+.slider .carousel-control-next {
+  justify-content: flex-end;
+  padding-right: 18px;
+}/*# sourceMappingURL=style.css.map */

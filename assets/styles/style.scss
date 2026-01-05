@@ -1,0 +1,293 @@
+/* =======================
+   Variables
+======================= */
+$social-size: 44px; // اندازه دایره اولیه
+$social-expand: 120px; // عرض بعد از باز شدن
+$social-radius: 28px; // شعاع گوشه بعد از باز شدن
+$transition-speed: 0.35s;
+$green: #277d37;
+$white: #fff;
+
+$social-colors: (
+    telegram: #0088cc,
+    whatsapp: #25d366
+);
+
+
+   /* =======================
+   Header Phone Button
+======================= */
+    .phone {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.55rem 0.85rem;
+        border-radius: 999px;
+        border: 1px solid rgba(255, 255, 255, 0.45);
+        background: $green;
+        color: $white;
+        text-decoration: none;
+        font-weight: 600;
+        // transition: $transition-fast;
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+
+        &:hover {
+            background: $white;
+            color: $green;
+            transform: translateY(-1px);
+            border-color: $green;
+        }
+    }
+
+    /* =======================
+   Header VR
+======================= */
+    .header-vr {
+        margin: 0 12px;
+        height: 28px;
+        align-self: center;
+        opacity: 0.45;
+    }
+
+    /* =======================
+   Navbar
+======================= */
+    .navbar {
+        .navbar-collapse {
+            align-items: center;
+        }
+
+        .navbar-nav {
+            gap: 0.35rem;
+        }
+
+        @media (min-width: 992px) {
+            .navbar-collapse {
+                display: flex;
+                justify-content: space-between;
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 991.98px) {
+            .navbar-collapse {
+                margin-top: 12px;
+                padding: 12px;
+                border-radius: 12px;
+                background: rgba(0, 0, 0, 0.35);
+                backdrop-filter: blur(10px);
+                -webkit-backdrop-filter: blur(10px);
+            }
+
+            .navbar-nav {
+                text-align: right;
+                gap: 0.25rem;
+            }
+
+            form.d-flex {
+                width: 100%;
+                margin-top: 10px;
+
+                .btn {
+                    flex: 1;
+                }
+            }
+
+            .header-vr {
+                width: 100%;
+                height: 1px;
+                margin: 12px 0;
+                opacity: 0.35;
+            }
+
+            .auth-link {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+    }
+
+    /* =======================
+   Social Buttons
+======================= */
+    $social-size: 44px;
+    $social-expand: 140px;
+    $social-radius: 28px;
+    $transition-speed: 0.35s;
+
+    $social-colors: (
+        telegram: #0088cc,
+        whatsapp: #25d366
+    );
+
+.social {
+    .social-buttons {
+        display: flex;
+        gap: 12px;
+        align-items: center;
+    }
+
+    .social-btn {
+        position: relative;
+        display: inline-flex;
+        align-items: center;
+
+        width: $social-size;
+        height: $social-size;
+
+        border-radius: 50%;
+        overflow: hidden;
+
+        text-decoration: none;
+        color: #fff;
+
+        transition: width $transition-speed ease, border-radius $transition-speed ease;
+
+        // آیکن همیشه ثابت سمت راست
+        i {
+            position: absolute;
+            top: 50%;
+            right: 50%;
+            transform: translate(50%, -50%);
+            font-size: 40px;
+            z-index: 2;
+
+        }
+
+        // متن مخفی (سمت چپ آیکن ظاهر میشه)
+        span {
+            position: absolute;
+            top: 50%;
+            right: 12px; // در حالت باز شده، از راست شروع کن
+            transform: translateY(-50%);
+            opacity: 0;
+            white-space: nowrap;
+            transition: opacity 0.25s ease;
+            z-index: 1;
+            font-size: 14px;
+        }
+
+        &.is-open {
+            width: $social-expand;
+            border-radius: $social-radius;
+
+            // متن میاد سمت چپ آیکن (آیکن ثابت می‌مونه)
+            span {
+                opacity: 1;
+                right: 30px; // فاصله از راست = اندازه تقریبی آیکن + فاصله
+            }
+        }
+
+        @each $name, $color in $social-colors {
+            &.#{$name} {
+                background-color: $color;
+            }
+        }
+    }
+}
+
+
+/* =======================
+   Slider
+======================= */
+.slider {
+    .carousel-item {
+        position: relative;
+
+        img {
+            height: 90vh;
+            object-fit: cover;
+            filter: brightness(0.7); // کمی تیره‌تر برای خوانایی متن
+        }
+    }
+
+    /* متن وسط تصویر */
+    .carousel-caption {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        right: auto;
+        bottom: auto;
+
+        display: flex !important;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        text-align: center;
+        width: min(900px, 92%);
+        padding: 22px 26px;
+        border-radius: 18px;
+
+        background: rgba(0, 0, 0, 0.35);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+
+        box-shadow: 0 18px 50px rgba(0, 0, 0, 0.35);
+
+        h2 {
+            margin: 0 0 10px 0;
+            font-weight: 900;
+            line-height: 3;
+            letter-spacing: -0.5px;
+            
+
+            font-size: clamp(34px, 5vw, 72px) !important;
+            text-shadow: 0 10px 28px rgba(0, 0, 0, 0.1);
+        }
+
+        p {
+            margin: 0;
+            font-size: clamp(14px, 1.4vw, 20px) !important;
+            opacity: 0.95;
+        }
+    }
+
+    /* دکمه‌های قبلی / بعدی */
+    .carousel-control-prev,
+    .carousel-control-next {
+        width: 64px;
+        opacity: 1;
+
+        .carousel-control-prev-icon,
+        .carousel-control-next-icon {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+
+            background-color: transparent;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+
+            border: 1px solid rgba(255, 255, 255, 0.35);
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25);
+
+            transition: transform 0.25s ease, background-color 0.25s ease, border-color 0.25s ease;
+        }
+
+        &:hover {
+
+            .carousel-control-prev-icon,
+            .carousel-control-next-icon {
+                transform: translateY(-1px) scale(1.06);
+                background-color: rgba(255, 255, 255, 0.28);
+                border-color: rgba(255, 255, 255, 0.55);
+            }
+        }
+    }
+
+    /* جای دکمه‌ها کمی بهتر */
+    .carousel-control-prev {
+        justify-content: flex-start;
+        padding-left: 18px;
+    }
+
+    .carousel-control-next {
+        justify-content: flex-end;
+        padding-right: 18px;
+    }
+}
+ 
