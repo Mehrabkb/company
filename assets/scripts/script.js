@@ -29,3 +29,9 @@ function closeAllSocials() {
     openBtn.classList.remove('is-open');
   });
 }
+
+$(document).ready(function() {
+  $('#page').verticalScroll({
+    // options here
+  });
+}); 
