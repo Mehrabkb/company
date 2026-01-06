@@ -9,10 +9,10 @@
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  padding: 0.55rem 0.85rem;
+  padding: 1rem;
   border-radius: 999px;
   border: 1px solid rgba(255, 255, 255, 0.45);
-  background: #277d37;
+  background: #26323b;
   color: #fff;
   text-decoration: none;
   font-weight: 600;
@@ -160,10 +160,15 @@
   position: relative;
 }
 .slider .carousel-item img {
-  height: 40vh;
+  height: 60vh;
   -o-object-fit: cover;
      object-fit: cover;
   filter: brightness(0.7);
+}
+@media (max-width: 768px) {
+  .slider .carousel-item img {
+    height: 40vh;
+  }
 }
 .slider .carousel-caption {
   position: absolute;

@@ -21,10 +21,10 @@ $social-colors: (
         display: inline-flex;
         align-items: center;
         gap: 0.5rem;
-        padding: 0.55rem 0.85rem;
+        padding: 1rem;
         border-radius: 999px;
         border: 1px solid rgba(255, 255, 255, 0.45);
-        background: $green;
+        background: #26323b;
         color: $white;
         text-decoration: none;
         font-weight: 600;
@@ -203,7 +203,10 @@ $social-colors: (
         position: relative;
 
         img {
-            height: 40vh;
+            height: 60vh;
+            @media (max-width:768px) {
+                height: 40vh;
+            }
             object-fit: cover;
             filter: brightness(0.7); // کمی تیره‌تر برای خوانایی متن
         }
