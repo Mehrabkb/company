@@ -61,6 +61,9 @@ $social-colors: (
 
         .navbar-nav {
             gap: 0.35rem;
+            .nav-link{
+                font-weight: bold;
+            }
         }
 
         @media (min-width: 992px) {
@@ -106,6 +109,7 @@ $social-colors: (
                 width: 100%;
                 justify-content: center;
             }
+
         }
     }
 
