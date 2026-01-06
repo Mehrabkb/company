@@ -160,7 +160,7 @@
   position: relative;
 }
 .slider .carousel-item img {
-  height: 90vh;
+  height: 40vh;
   -o-object-fit: cover;
      object-fit: cover;
   filter: brightness(0.7);
