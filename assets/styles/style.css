@@ -240,4 +240,12 @@
 .slider .carousel-control-next {
   justify-content: flex-end;
   padding-right: 18px;
+}
+
+#box-main {
+  font-size: 1.1rem;
+}
+
+.list-unstyled li {
+  line-height: 1.5;
 }/*# sourceMappingURL=style.css.map */

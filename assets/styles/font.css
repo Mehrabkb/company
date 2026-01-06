@@ -2,7 +2,11 @@
 	font-family: bNazanin;
 	src: url("../fonts/B_NAZANIN/B-NAZANIN.TTF")format("truetype");
 }
+@font-face {
+	font-family: iraniansansweb;
+	src: url("../fonts/Iranian\ Sans.ttf") format("truetype");
+}
 
 *{
-	font-family: bNazanin!important;
+	font-family: iraniansansweb!important;
 }
