@@ -10,7 +10,7 @@ $white: #fff;
 
 $social-colors: (
     telegram: #0088cc,
-    whatsapp: #25d366
+    whatsapp: #277d37
 );
 
 
@@ -119,7 +119,7 @@ $social-colors: (
 
     $social-colors: (
         telegram: #0088cc,
-        whatsapp: #25d366
+        whatsapp: #277d37
     );
 
 .social {
@@ -133,10 +133,11 @@ $social-colors: (
         position: relative;
         display: inline-flex;
         align-items: center;
-
+        display: flex;
+        justify-content: center;
+        align-items: center;
         width: $social-size;
         height: $social-size;
-
         border-radius: 50%;
         overflow: hidden;
 
@@ -144,7 +145,12 @@ $social-colors: (
         color: #fff;
 
         transition: width $transition-speed ease, border-radius $transition-speed ease;
-
+        &:hover{
+            justify-content: flex-end;
+        }
+        svg{
+            font-size: 1.7rem;
+        }
         // آیکن همیشه ثابت سمت راست
         i {
             position: absolute;
@@ -166,7 +172,7 @@ $social-colors: (
             white-space: nowrap;
             transition: opacity 0.25s ease;
             z-index: 1;
-            font-size: 14px;
+            font-size: 1.5rem;
         }
 
         &.is-open {
