@@ -1,4 +1,5 @@
 @charset "UTF-8";
+
 /* =======================
    Variables
 ======================= */
@@ -20,6 +21,7 @@
   -webkit-backdrop-filter: blur(10px);
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
 }
+
 .phone:hover {
   background: #fff;
   color: #277d37;
@@ -43,12 +45,15 @@
 .navbar .navbar-collapse {
   align-items: center;
 }
+
 .navbar .navbar-nav {
   gap: 0.35rem;
 }
+
 .navbar .navbar-nav .nav-link {
   font-weight: bold;
 }
+
 @media (min-width: 992px) {
   .navbar .navbar-collapse {
     display: flex;
@@ -56,6 +61,7 @@
     width: 100%;
   }
 }
+
 @media (max-width: 991.98px) {
   .navbar .navbar-collapse {
     margin-top: 12px;
@@ -65,23 +71,28 @@
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
   }
+
   .navbar .navbar-nav {
     text-align: right;
     gap: 0.25rem;
   }
+
   .navbar form.d-flex {
     width: 100%;
     margin-top: 10px;
   }
+
   .navbar form.d-flex .btn {
     flex: 1;
   }
+
   .navbar .header-vr {
     width: 100%;
     height: 1px;
     margin: 12px 0;
     opacity: 0.35;
   }
+
   .navbar .auth-link {
     width: 100%;
     justify-content: center;
@@ -96,6 +107,7 @@
   gap: 12px;
   align-items: center;
 }
+
 .social .social-btn {
   position: relative;
   display: inline-flex;
@@ -111,12 +123,15 @@
   color: #fff;
   transition: width 0.35s ease, border-radius 0.35s ease;
 }
+
 .social .social-btn:hover {
   justify-content: flex-end;
 }
+
 .social .social-btn svg {
   font-size: 1.7rem;
 }
+
 .social .social-btn i {
   position: absolute;
   top: 50%;
@@ -125,6 +140,7 @@
   font-size: 40px;
   z-index: 2;
 }
+
 .social .social-btn span {
   position: absolute;
   top: 50%;
@@ -136,17 +152,21 @@
   z-index: 1;
   font-size: 1rem;
 }
+
 .social .social-btn.is-open {
   width: 140px;
   border-radius: 28px;
 }
+
 .social .social-btn.is-open span {
   opacity: 1;
   right: 30px;
 }
+
 .social .social-btn.telegram {
   background-color: #0088cc;
 }
+
 .social .social-btn.whatsapp {
   background-color: #277d37;
 }
@@ -159,20 +179,24 @@
   /* دکمه‌های قبلی / بعدی */
   /* جای دکمه‌ها کمی بهتر */
 }
+
 .slider .carousel-item {
   position: relative;
 }
+
 .slider .carousel-item img {
   height: 80vh;
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   filter: brightness(0.7);
 }
+
 @media (max-width: 768px) {
   .slider .carousel-item img {
     height: 40vh;
   }
 }
+
 .slider .carousel-caption {
   position: absolute;
   top: 50%;
@@ -193,6 +217,7 @@
   -webkit-backdrop-filter: blur(10px);
   box-shadow: 0 18px 50px rgba(0, 0, 0, 0.35);
 }
+
 .slider .carousel-caption h2 {
   margin: 0 0 10px 0;
   font-weight: 900;
@@ -201,16 +226,19 @@
   font-size: clamp(34px, 5vw, 72px) !important;
   text-shadow: 0 10px 28px rgba(0, 0, 0, 0.1);
 }
+
 .slider .carousel-caption p {
   margin: 0;
   font-size: clamp(14px, 1.4vw, 20px) !important;
   opacity: 0.95;
 }
+
 .slider .carousel-control-prev,
 .slider .carousel-control-next {
   width: 64px;
   opacity: 1;
 }
+
 .slider .carousel-control-prev .carousel-control-prev-icon,
 .slider .carousel-control-prev .carousel-control-next-icon,
 .slider .carousel-control-next .carousel-control-prev-icon,
@@ -225,6 +253,7 @@
   box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25);
   transition: transform 0.25s ease, background-color 0.25s ease, border-color 0.25s ease;
 }
+
 .slider .carousel-control-prev:hover .carousel-control-prev-icon,
 .slider .carousel-control-prev:hover .carousel-control-next-icon,
 .slider .carousel-control-next:hover .carousel-control-prev-icon,
@@ -233,10 +262,12 @@
   background-color: rgba(255, 255, 255, 0.28);
   border-color: rgba(255, 255, 255, 0.55);
 }
+
 .slider .carousel-control-prev {
   justify-content: flex-start;
   padding-left: 18px;
 }
+
 .slider .carousel-control-next {
   justify-content: flex-end;
   padding-right: 18px;
@@ -251,7 +282,8 @@
 }
 
 /* Ensure the body takes up full height */
-html, body {
+html,
+body {
   margin: 0;
   padding: 0;
   height: 100%;
@@ -260,7 +292,8 @@ html, body {
 /* The container */
 #page {
   height: 100vh;
-  overflow: hidden; /* Prevents native scrollbars */
+  overflow: hidden;
+  /* Prevents native scrollbars */
 }
 
 /* Individual sections */
@@ -286,83 +319,147 @@ header {
   padding-left: 20px;
 }
 
+
 .hero {
-  height: 100vh;
+  position: relative;
+  min-height: 100vh;
+  background: url("../images/hero-bg.jpg") no-repeat center center/cover;
+
+  color: #fff;
   display: flex;
   align-items: center;
-  justify-content: center;
-  text-align: center;
-  color: #fff;
-  position: relative;
-  overflow: hidden;
+  padding: 0;
 }
 
+/* برای بهتر خوانا شدن متن روی عکس */
 .hero::before {
   content: "";
   position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: linear-gradient(270deg, #00c6ff, #0072ff, #ff00c6, #ff7200);
-  background-size: 400% 400%;
-  -webkit-animation: gradientMove 15s ease infinite;
-          animation: gradientMove 15s ease infinite;
-  z-index: 0;
-}
-
-@-webkit-keyframes gradientMove {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
-@keyframes gradientMove {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-.hero .content {
-  position: relative;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.8);
   z-index: 1;
 }
 
+.hero-content {
+  position: relative;
+  max-width: 540px;
+  padding: 0 4rem;
+  justify-content: center;
+  text-align: center;
+  z-index: 2;
+}
+
+/* انیمیشن ورود از سمت چپ */
+@keyframes slideInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* استایل عنوان اصلی */
 .hero h1 {
-  font-size: 4rem;
-  font-weight: bold;
+  font-size: 3rem;
+  font-weight: 800;
+  background: linear-gradient(90deg, #38bdf8, #818cf8, #c084fc);
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: slideInLeft 0.8s ease forwards;
+}
+
+/* عنوان دوم */
+.hero h2 {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #e2e8f0;
   margin-bottom: 1rem;
-  text-transform: uppercase;
-  letter-spacing: 2px;
+  animation: slideInLeft 1s ease forwards;
 }
 
+/* پاراگراف */
 .hero p {
-  font-size: 1.3rem;
-  margin-bottom: 2rem;
+  font-size: 1rem;
+  line-height: 1.8;
+  color: #cbd5e1;
+  margin-bottom: 1.2rem;
+  animation: slideInLeft 1.2s ease forwards;
 }
 
-.hero .btn {
-  padding: 0.8rem 1.5rem;
-  background: #fff;
-  color: #000;
+/* لیست */
+.hero ul {
+  list-style: none;
+  padding: 0;
+  margin: 1.2rem 0 1.8rem;
+  line-height: 1.7;
+}
+
+.hero ul li {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  color: #f1f5f9;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  animation: slideInLeft 1.4s ease forwards;
+}
+
+/* بولت‌های نئونی */
+.hero ul li::before {
+  content: "";
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #38bdf8, #3b82f6);
+  box-shadow: 0 0 10px #38bdf8;
+}
+
+.hero-actions {
+  display: flex;
+  margin-top: 1.3rem;
+  gap: 1.3rem;
+  flex-wrap: nowrap;
+  /* مهم */
+}
+
+
+.hero-actions .btn {
+  padding: 0.75rem 1.8rem;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  font-weight: 600;
   text-decoration: none;
-  border-radius: 30px;
-  font-weight: bold;
-  transition: all 0.3s ease;
+  transition: 0.25s ease;
 }
 
-.hero .btn:hover {
-  background: #000;
+/* دکمه اصلی */
+.hero-actions .btn.primary {
+  background: #3b82f6;
   color: #fff;
-}/*# sourceMappingURL=style.css.map */
+  border: none;
+  box-shadow: 0 4px 14px rgba(59, 130, 246, 0.35);
+}
+
+.hero-actions .btn.primary:hover {
+  background: #2563eb;
+  box-shadow: 0 6px 20px rgba(59, 130, 246, 0.55);
+  transform: translateY(-2px);
+}
+
+/* دکمه دوم */
+.hero-actions .btn.secondary {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: #e2e8f0;
+  backdrop-filter: blur(6px);
+}
+
+.hero-actions .btn.secondary:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.4);
+  transform: translateY(-2px);
+}
