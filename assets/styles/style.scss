@@ -1,131 +1,140 @@
+@charset "UTF-8";
+
+@font-face {
+    font-family: dana-black;
+    src: url(../../assets/fonts/dana/Dana-ExtraBlack.ttf);
+}
+
+@font-face {
+    font-family: dana-demiBold;
+    src: url(../../assets/fonts/dana/Dana-DemiBold.ttf);
+}
+
+@font-face {
+    font-family: dana;
+    src: url(../../assets/fonts/dana/Dana-Black.ttf);
+}
+
 /* =======================
    Variables
 ======================= */
-$social-size: 44px; // اندازه دایره اولیه
-$social-expand: 120px; // عرض بعد از باز شدن
-$social-radius: 28px; // شعاع گوشه بعد از باز شدن
-$transition-speed: 0.35s;
-$green: #277d37;
 $white: #fff;
+$green: #277d37;
+$dark: #26323b;
 
-$social-colors: (
-    telegram: #0088cc,
-    whatsapp: #277d37
-);
+$glass-bg: rgba(0, 0, 0, 0.35);
+$overlay-bg: rgba(0, 0, 0, 0.8);
 
+$blur-10: blur(10px);
+$blur-6: blur(6px);
 
-   /* =======================
+$shadow-soft: 0 8px 24px rgba(0, 0, 0, 0.12);
+$shadow-strong: 0 18px 50px rgba(0, 0, 0, 0.35);
+
+$transition-fast: 0.25s ease;
+
+/* =======================
    Header Phone Button
 ======================= */
-    .phone {
-        display: inline-flex;
-        align-items: center;
-        gap: 0.5rem;
-        padding: 1rem;
-        border-radius: 999px;
-        border: 1px solid rgba(255, 255, 255, 0.45);
-        background: #26323b;
-        color: $white;
-        text-decoration: none;
-        font-weight: 600;
-        // transition: $transition-fast;
-        backdrop-filter: blur(10px);
-        -webkit-backdrop-filter: blur(10px);
-        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+.phone {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem;
+    border-radius: 999px;
+    border: 1px solid rgba(255, 255, 255, 0.45);
+    background: $dark;
+    color: $white;
+    text-decoration: none;
+    font-weight: 600;
+    backdrop-filter: $blur-10;
+    -webkit-backdrop-filter: $blur-10;
+    box-shadow: $shadow-soft;
+    transition: $transition-fast;
 
-        &:hover {
-            background: $white;
-            color: $green;
-            transform: translateY(-1px);
-            border-color: $green;
+    &:hover {
+        background: $white;
+        color: $green;
+        transform: translateY(-1px);
+        border-color: $green;
+    }
+}
+
+/* =======================
+   Header VR
+======================= */
+.header-vr {
+    margin: 0 12px;
+    height: 28px;
+    align-self: center;
+    opacity: 0.45;
+}
+
+/* =======================
+   Navbar
+======================= */
+.navbar {
+    .navbar-collapse {
+        align-items: center;
+    }
+
+    .navbar-nav {
+        gap: 0.35rem;
+
+        .nav-link {
+            font-weight: bold;
         }
     }
 
-    /* =======================
-   Header VR
-======================= */
-    .header-vr {
-        margin: 0 12px;
-        height: 28px;
-        align-self: center;
-        opacity: 0.45;
+    @media (min-width: 992px) {
+        .navbar-collapse {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+        }
     }
 
-    /* =======================
-   Navbar
-======================= */
-    .navbar {
+    @media (max-width: 991.98px) {
         .navbar-collapse {
-            align-items: center;
+            margin-top: 12px;
+            padding: 12px;
+            border-radius: 12px;
+            background: $glass-bg;
+            backdrop-filter: $blur-10;
+            -webkit-backdrop-filter: $blur-10;
         }
 
         .navbar-nav {
-            gap: 0.35rem;
-            .nav-link{
-                font-weight: bold;
+            text-align: right;
+            gap: 0.25rem;
+        }
+
+        form.d-flex {
+            width: 100%;
+            margin-top: 10px;
+
+            .btn {
+                flex: 1;
             }
         }
 
-        @media (min-width: 992px) {
-            .navbar-collapse {
-                display: flex;
-                justify-content: space-between;
-                width: 100%;
-            }
+        .header-vr {
+            width: 100%;
+            height: 1px;
+            margin: 12px 0;
+            opacity: 0.35;
         }
 
-        @media (max-width: 991.98px) {
-            .navbar-collapse {
-                margin-top: 12px;
-                padding: 12px;
-                border-radius: 12px;
-                background: rgba(0, 0, 0, 0.35);
-                backdrop-filter: blur(10px);
-                -webkit-backdrop-filter: blur(10px);
-            }
-
-            .navbar-nav {
-                text-align: right;
-                gap: 0.25rem;
-            }
-
-            form.d-flex {
-                width: 100%;
-                margin-top: 10px;
-
-                .btn {
-                    flex: 1;
-                }
-            }
-
-            .header-vr {
-                width: 100%;
-                height: 1px;
-                margin: 12px 0;
-                opacity: 0.35;
-            }
-
-            .auth-link {
-                width: 100%;
-                justify-content: center;
-            }
-
+        .auth-link {
+            width: 100%;
+            justify-content: center;
         }
     }
+}
 
-    /* =======================
+/* =======================
    Social Buttons
 ======================= */
-    $social-size: 44px;
-    $social-expand: 140px;
-    $social-radius: 28px;
-    $transition-speed: 0.35s;
-
-    $social-colors: (
-        telegram: #0088cc,
-        whatsapp: #277d37
-    );
-
 .social {
     .social-buttons {
         display: flex;
@@ -135,27 +144,27 @@ $social-colors: (
 
     .social-btn {
         position: relative;
-        display: inline-flex;
-        align-items: center;
         display: flex;
         justify-content: center;
         align-items: center;
-        width: $social-size;
-        height: $social-size;
+
+        width: 44px;
+        height: 44px;
         border-radius: 50%;
         overflow: hidden;
 
         text-decoration: none;
-        color: #fff;
+        color: $white;
+        transition: width 0.35s ease, border-radius 0.35s ease;
 
-        transition: width $transition-speed ease, border-radius $transition-speed ease;
-        &:hover{
+        &:hover {
             justify-content: flex-end;
         }
-        svg{
+
+        svg {
             font-size: 1.7rem;
         }
-        // آیکن همیشه ثابت سمت راست
+
         i {
             position: absolute;
             top: 50%;
@@ -163,14 +172,12 @@ $social-colors: (
             transform: translate(50%, -50%);
             font-size: 40px;
             z-index: 2;
-
         }
 
-        // متن مخفی (سمت چپ آیکن ظاهر میشه)
         span {
             position: absolute;
             top: 50%;
-            right: 12px; // در حالت باز شده، از راست شروع کن
+            right: 12px;
             transform: translateY(-50%);
             opacity: 0;
             white-space: nowrap;
@@ -180,43 +187,51 @@ $social-colors: (
         }
 
         &.is-open {
-            width: $social-expand;
-            border-radius: $social-radius;
+            width: 140px;
+            border-radius: 28px;
 
-            // متن میاد سمت چپ آیکن (آیکن ثابت می‌مونه)
             span {
                 opacity: 1;
-                right: 30px; // فاصله از راست = اندازه تقریبی آیکن + فاصله
+                right: 30px;
             }
         }
 
-        @each $name, $color in $social-colors {
-            &.#{$name} {
-                background-color: $color;
-            }
+        &.telegram {
+            background-color: #0088cc;
+        }
+
+        &.whatsapp {
+            background-color: $green;
         }
     }
 }
-
 
 /* =======================
    Slider
 ======================= */
 .slider {
+    /* متن وسط تصویر */
+    /* دکمه‌های قبلی / بعدی */
+    /* جای دکمه‌ها کمی بهتر */
+
     .carousel-item {
         position: relative;
 
         img {
             height: 80vh;
-            @media (max-width:768px) {
-                height: 40vh;
-            }
             object-fit: cover;
-            filter: brightness(0.7); // کمی تیره‌تر برای خوانایی متن
+            filter: brightness(0.7);
         }
     }
 
-    /* متن وسط تصویر */
+    @media (max-width: 768px) {
+        .carousel-item {
+            img {
+                height: 40vh;
+            }
+        }
+    }
+
     .carousel-caption {
         position: absolute;
         top: 50%;
@@ -229,25 +244,23 @@ $social-colors: (
         flex-direction: column;
         align-items: center;
         justify-content: center;
-
         text-align: center;
+
         width: min(900px, 92%);
         padding: 22px 26px;
         border-radius: 18px;
 
-        background: rgba(0, 0, 0, 0.35);
-        backdrop-filter: blur(10px);
-        -webkit-backdrop-filter: blur(10px);
+        background: $glass-bg;
+        backdrop-filter: $blur-10;
+        -webkit-backdrop-filter: $blur-10;
 
-        box-shadow: 0 18px 50px rgba(0, 0, 0, 0.35);
+        box-shadow: $shadow-strong;
 
         h2 {
             margin: 0 0 10px 0;
             font-weight: 900;
             line-height: 3;
             letter-spacing: -0.5px;
-            
-
             font-size: clamp(34px, 5vw, 72px) !important;
             text-shadow: 0 10px 28px rgba(0, 0, 0, 0.1);
         }
@@ -259,27 +272,29 @@ $social-colors: (
         }
     }
 
-    
-    /* دکمه‌های قبلی / بعدی */
     .carousel-control-prev,
     .carousel-control-next {
         width: 64px;
         opacity: 1;
+    }
+
+    .carousel-control-prev,
+    .carousel-control-next {
 
         .carousel-control-prev-icon,
         .carousel-control-next-icon {
             width: 44px;
             height: 44px;
             border-radius: 50%;
-
             background-color: transparent;
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
+
+            backdrop-filter: $blur-10;
+            -webkit-backdrop-filter: $blur-10;
 
             border: 1px solid rgba(255, 255, 255, 0.35);
             box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25);
-
-            transition: transform 0.25s ease, background-color 0.25s ease, border-color 0.25s ease;
+            transition: transform 0.25s ease, background-color 0.25s ease,
+                border-color 0.25s ease;
         }
 
         &:hover {
@@ -293,7 +308,6 @@ $social-colors: (
         }
     }
 
-    /* جای دکمه‌ها کمی بهتر */
     .carousel-control-prev {
         justify-content: flex-start;
         padding-left: 18px;
@@ -304,47 +318,255 @@ $social-colors: (
         padding-right: 18px;
     }
 }
- 
-#box-main{
+
+/* =======================
+   Helpers / Layout
+======================= */
+#box-main {
     font-size: 1.1rem;
 }
-.list-unstyled li{
-    line-height: 1.5;
+
+.list-unstyled {
+    li {
+        line-height: 1.5;
+    }
 }
 
-
-/* Ensure the body takes up full height */
-html, body {
+html,
+body {
     margin: 0;
     padding: 0;
     height: 100%;
-  }
-  
-  /* The container */
-  #page {
+}
+
+#page {
     height: 100vh;
-    overflow: hidden; /* Prevents native scrollbars */
-  }
-  
-  /* Individual sections */
-  section {
+    overflow: hidden;
+    /* Prevents native scrollbars */
+}
+
+section {
     height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
-  }
+}
 
-  header{
+header {
     position: sticky;
     top: 0;
-    right : 0;
+    right: 0;
     z-index: 9;
-    background-color: #fff;
+    background-color: $white;
     border-bottom: 1px solid #000;
-  }
-  .vs-pagination-list{
+}
+
+.vs-pagination-list {
     align-items: flex-end;
     padding-left: 20px;
+}
+
+/* =======================
+   Hero
+======================= */
+.hero {
+    position: relative;
+    min-height: 100vh;
+    background: url("../images/hero-bg.jpg") no-repeat center center/cover;
+    color: $white;
+    display: flex;
+    align-items: center;
+    padding: 0;
+
+    &::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: $overlay-bg;
+        z-index: 1;
+    }
+
+    &-content {
+        position: relative;
+        // max-width: 540px;
+        padding: 0 4rem;
+        justify-content: center;
+        text-align: center;
+        z-index: 2;
+    }
+
+    h1 {
+        font-family: dana-black !important;
+        font-size: 4rem;
+        font-weight: 800;
+        background: linear-gradient(90deg, #38bdf8, #818cf8, #c084fc);
+        -webkit-background-clip: text;
+        color: transparent;
+        animation: slideInLeft 0.8s ease forwards;
+        margin-bottom: 7%;
+        
+    }
+
+    h2 {
+        font-family: dana-demiBold !important;
+        font-size: 1.6rem;
+        font-weight: 600;
+        color: #e2e8f0;
+        margin-bottom: 1rem;
+        animation: slideInLeft 1s ease forwards;
+    }
+
+    p {
+        font-family: dana !important;
+        font-size: 1rem;
+        line-height: 1.8;
+        color: #cbd5e1;
+        margin-bottom: 1.2rem;
+        animation: slideInLeft 1.2s ease forwards;
+    }
+
+    ul {
+        list-style: none;
+        padding: 0;
+        margin: 1.2rem 0 1.8rem;
+        line-height: 3;
+        width: 100%;
+        max-width: 520px;
+        margin: 1.2rem auto;
+        align-items: flex-start;
+
+
+        li {
+            font-family: dana-demiBold !important;
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+            color: #f1f5f9;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            animation: slideInLeft 1.4s ease forwards;
+            justify-content: flex-start; // ⭐ متن‌ها از یک خط
+            text-align: right;
+            line-height: 2.5;
+
+            &::before {
+                content: "";
+                width: 10px;
+                height: 10px;
+                border-radius: 50%;
+                background: radial-gradient(circle, #38bdf8, #3b82f6);
+                box-shadow: 0 0 10px #38bdf8;
+            }
+        }
+    }
+}
+
+/* انیمیشن ورود از سمت چپ */
+@keyframes slideInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-40px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* =======================
+   Hero Actions (Buttons)
+======================= */
+.hero-actions {
+    display: flex;
+    margin-top: 1.3rem;
+    gap: 1.3rem;
+    flex-wrap: nowrap;
+    /* مهم */
+
+    .btn {
+        padding: 0.75rem 1.8rem;
+        border-radius: 10px;
+        font-size: 0.95rem;
+        font-weight: 600;
+        text-decoration: none;
+        transition: $transition-fast;
+
+        &.primary {
+            background: #3b82f6;
+            color: $white;
+            border: none;
+            box-shadow: 0 4px 14px rgba(59, 130, 246, 0.35);
+
+            &:hover {
+                background: #2563eb;
+                box-shadow: 0 6px 20px rgba(59, 130, 246, 0.55);
+                transform: translateY(-2px);
+            }
+        }
+
+        &.secondary {
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            color: #e2e8f0;
+            backdrop-filter: $blur-6;
+
+            &:hover {
+                background: rgba(255, 255, 255, 0.15);
+                border-color: rgba(255, 255, 255, 0.4);
+                transform: translateY(-2px);
+            }
+        }
+    }
+}
+
+
+/* ===== FIX verticalScroll + Responsive Sections ===== */
+
+/* سکشن‌ها برای پلاگین باید ارتفاع ثابت داشته باشن */
+section {
+  height: 100vh;
+  height: 100svh; /* موبایل */
+}
+
+/* موبایل: محتوا قطع نشه، سکشن بعدی هم دیده بشه */
+@media (max-width: 768px) {
+  section {
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    padding: 4rem 0;
+    align-items: flex-start;
   }
 
-  .hero { height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; color: #fff; position: relative; overflow: hidden; } .hero::before { content: ""; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: linear-gradient(270deg, #00c6ff, #0072ff, #ff00c6, #ff7200); background-size: 400% 400%; animation: gradientMove 15s ease infinite; z-index: 0; } @keyframes gradientMove { 0% {background-position: 0% 50%;} 50% {background-position: 100% 50%;} 100% {background-position: 0% 50%;} } .hero .content { position: relative; z-index: 1; } .hero h1 { font-size: 4rem; font-weight: bold; margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 2px; } .hero p { font-size: 1.3rem; margin-bottom: 2rem; } .hero .btn { padding: 0.8rem 1.5rem; background: #fff; color: #000; text-decoration: none; border-radius: 30px; font-weight: bold; transition: all 0.3s ease; } .hero .btn:hover { background: #000; color: #fff; }
+  /* Hero فقط کوچیک‌تر شه، سکشن نشکنه */
+  .hero .hero-content {
+    padding: 0 1.25rem;
+  }
+
+  .hero h1 { font-size: 2.3rem; }
+  .hero h2 { font-size: 1.15rem; }
+  .hero p  { font-size: .95rem; }
+
+  /* دکمه‌ها ستونی */
+  .hero-actions {
+    flex-direction: column;
+  }
+
+  .hero-actions .btn {
+    width: 100%;
+  }
+}
+/* ✅ فقط موبایل */
+@media (max-width: 768px){
+  #page{
+    height: auto !important;
+    overflow: visible !important;
+  }
+
+  #page > section{
+    height: auto !important;
+    min-height: 100svh;   /* هر سکشن حداقل یک صفحه */
+    display: block !important;
+    padding: 4rem 0;
+  }
+}
